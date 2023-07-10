@@ -43,7 +43,7 @@ public class Fee {
                 target = i;
             }
         }
-        
+
         System.out.println("closest price: " + storeTotal[target]);
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[1].length; j++) {
@@ -73,24 +73,24 @@ public class Fee {
         // storeTotal[i+20]= storePrice2[i];
         // }
 
-        // for(int i = 0 ; i < storeTotal.length; i++){
-        // for(int j =0; j<storeTotal.length-1 ; j++){
-        // if (storeTotal[i] > storeTotal[j]){
-        // int temp = 0 ;
-        // temp = storeTotal[j];
-        // storeTotal[j] = storeTotal[i];
-        // storeTotal[i] = temp;
-        // }
-        // }
-        // }
-        // int median = storeTotal[20];
-        // for (int i = 0; i < array.length; i++){
-        // for (int j =0 ; j < array[1].length; j ++){
-        // if (array[i][j] == median){
-        // System.out.println("가장 중위값 호수는 :"+(i+1)+"0"+(j+1));
-        // }
-        // }
-        // }
+        for (int i = 0; i < storeTotal.length; i++) {
+            for (int j = 0; j < storeTotal.length - 1; j++) {
+                if (storeTotal[i] > storeTotal[j]) {
+                    int temp = 0;
+                    temp = storeTotal[j];
+                    storeTotal[j] = storeTotal[i];
+                    storeTotal[i] = temp;
+                }
+            }
+        }
+        int median = storeTotal[20];
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[1].length; j++) {
+                if (array[i][j] == median) {
+                    System.out.println("가장 중위값 호수는 :" + (i + 1) + "0" + (j + 1));
+                }
+            }
+        } // DONE
 
         // Q1
         // int maxFee = 0;
