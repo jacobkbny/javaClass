@@ -3,9 +3,13 @@ public class Fee {
         // 0 , 0 -> 101
         // 0 , 1 -> 102
         int[][] array = new int[20][2]; // 21층 2호
+
         // Q1. 가장 비싼 관리비를 낸 호수 와 가장 적게 관리비를 내 호수를 찾기
-        // Q2. 관리비 중위값 그리고 중위값의 해당하는 호수 찾기
+        // Q2. 관리비 중위값 하위값 상위값 그리고 중위값의 해당하는 호수 찾기 하위값 75% 상위값 3%
+        // storeTotal[storeTotal.length * 3/4]
+        // storeTotal[storeTotal.length * 3/100]
         // Q3. 관리비 평균값 그리고 평균값에 가장 가까운 호수 찾기
+
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[1].length; j++) {
                 array[i][j] = (int) ((Math.random() * 50001) + 50000);
@@ -27,7 +31,9 @@ public class Fee {
         for (int i = 0; i < array.length; i++) {
             storeTotal[i + 20] = storePrice2[i];
         }
+
         int totalValue = 0;
+
         for (int i = 0; i < storeTotal.length; i++) {
             totalValue += storeTotal[i];
         }
@@ -83,7 +89,8 @@ public class Fee {
                 }
             }
         }
-        int median = storeTotal[20];
+
+        int median = storeTotal[storeTotal.length/2];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[1].length; j++) {
                 if (array[i][j] == median) {
